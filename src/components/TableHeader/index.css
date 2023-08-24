@@ -1,0 +1,26 @@
+table {
+  width: 100%;
+  text-align: center;
+}
+
+table, th, td {
+  border: 2px solid rgb(24, 14, 14);
+  /* border-collapse: collapse; */
+}
+
+.table-container {
+  width: 100%;
+  height: 85vh;
+  background-color: grey;
+  overflow: auto;
+}
+
+.content-displayer {
+  width: 100%;
+  height: 10vh;
+}
+
+.content-displayer button {
+  height: 4vh;
+  text-align: center;
+}
