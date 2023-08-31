@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import './index.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { indexReducer, inputChangeReducer } from '../../reducer/dataReducer'
+import TableHeader from '../TableHeader'
 
 const TableSheet = ({ data }) => {
   const matrixdata = useSelector((state) => state.data.value.initialMatrix)
@@ -23,10 +24,7 @@ const TableSheet = ({ data }) => {
     <>
       <table>
         <tbody>
-          <tr>
-            <td></td>
-            {childMatrix[0].map((_, index) => (<th key={index} scope="col">{index + 1}</th>))}
-          </tr>
+          <TableHeader/>
           {childMatrix.map((item, rowIndex) => (
             <tr key={rowIndex}>
               <th scope="row">{rowIndex + 1}</th>
