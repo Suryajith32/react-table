@@ -1,7 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialValue = {
-    initialMatrix: null
+    initialMatrix: null,
+    changedInputValue: null,
+    selectedIndex:[]
 }
 
 const dataSlice = createSlice({
@@ -12,14 +14,20 @@ const dataSlice = createSlice({
 
     reducers: {
         matrixReducer: (state, action) => {
-            console.log(state.value.initialMatrix, 'state from reducer before action is dispatched')
-            state.value.initialMatrix = action.payload
-            console.log(state.value.initialMatrix, 'state from reducer after the action is dispatched')
+            state.value.initialMatrix = action.payload;
         },
+        inputChangeReducer: (state, action) => {
+            state.value.changedInputValue = action.payload;
+        },
+        indexReducer: (state, action) => {
+            state.value.selectedIndex = action.payload;
+        }
     }
 })
 
 export const {
-    matrixReducer
+    matrixReducer,
+    inputChangeReducer,
+    indexReducer
 } = dataSlice.actions;
 export default dataSlice.reducer

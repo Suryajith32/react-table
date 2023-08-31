@@ -1,7 +1,19 @@
-#input-field {
+input {
     background-color: #fff;
     height: 30px;
     color: black;
     text-align: center;
     font-size: large;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+}
+
+table,
+th,
+td {
+    border: 2px solid rgb(24, 14, 14);
+    /* border-collapse: collapse; */
 }

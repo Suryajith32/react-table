@@ -1,11 +1,11 @@
 import './App.css'
-import TableHeader from './components/TableHeader'
+import TableContainer from './components/TableContainer'
 
 function App() {
 
   return (
     <>
-        <TableHeader />
+        <TableContainer />
     </>
   )
 }
