@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialValue = {
-    initialMatrix: null,
+    initialMatrix: [[]],
     changedInputValue: null,
-    selectedIndex:[]
+    selectedIndex: []
 }
 
 const dataSlice = createSlice({
@@ -21,6 +21,11 @@ const dataSlice = createSlice({
         },
         indexReducer: (state, action) => {
             state.value.selectedIndex = action.payload;
+        },
+        updateMatrix: (state, action) => {
+            console.log(state.value.initialMatrix, 'state from reducer')
+            console.log(action, 'consoling triggered action')
+            state?.value.initialMatrix[action.payload.currentRowIndex][action.payload.currentColumnIndex] == action.payload.newValue
         }
     }
 })
@@ -28,6 +33,7 @@ const dataSlice = createSlice({
 export const {
     matrixReducer,
     inputChangeReducer,
-    indexReducer
+    indexReducer,
+    updateMatrix
 } = dataSlice.actions;
 export default dataSlice.reducer
