@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import TableSheet from '../TableSheet'
 import './index.css'
-import { useDispatch, } from 'react-redux'
-import { matrixReducer } from '../../reducer/dataReducer'
+import { useSelector } from 'react-redux'
 
 const TableHeader = () => {
+  const updatedMarix = useSelector((state) => state.data.value.initialMatrix)
 
   const handleButtonCLick = () => {
-    console.log(indexValues, 'indexValues')
+    console.log(updatedMarix, 'UpdatedMatrix')
   }
 
   return (

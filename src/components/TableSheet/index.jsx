@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { memo, useEffect,  useState } from 'react'
 import './index.css'
 import TableHeader from '../TableHeader'
 import TableRow from '../TableRow'
 import { useDispatch } from 'react-redux'
-import { matrixReducer } from '../../reducer/dataReducer'
+import { addMatrix } from '../../reducer/dataReducer'
 
 const TableSheet = () => {
 
@@ -13,16 +13,17 @@ const TableSheet = () => {
         Math.floor(Math.random() * 80)
       )));
   const dispatch = useDispatch()
+  console.log('table sheet rendered')
 
   useEffect(() => {
-    dispatch((matrixReducer(matrixofNumbers)))
+    dispatch(addMatrix(matrixofNumbers))
   }, [])
 
   return (
     <>
       <table>
         <tbody>
-          <TableHeader />
+          <TableHeader matrixofNumbers={matrixofNumbers}/>
           <TableRow />
         </tbody>
       </table>
@@ -30,4 +31,4 @@ const TableSheet = () => {
   )
 }
 
-export default TableSheet
+export default memo(TableSheet)

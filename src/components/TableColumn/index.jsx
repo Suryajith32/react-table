@@ -1,9 +1,8 @@
-import React from 'react'
+import React, { memo }  from 'react'
 import Input from '../Input'
 
 const TableColumn = ({ data, rowIndex }) => {
-
-  console.log(rowIndex, 'props')
+console.log('coloumn rendered')
   return (
     <>
       {data && data.map((number, columnIndex) => (
@@ -15,4 +14,4 @@ const TableColumn = ({ data, rowIndex }) => {
   )
 }
 
-export default TableColumn
+export default memo(TableColumn)
